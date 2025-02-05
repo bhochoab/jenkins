@@ -10,7 +10,7 @@ pipeline {
         // Stage 1: Checkout del código
         stage('Checkout') {
             steps {
-                git branch: 'main', url: 'https://github.com/tu-usuario/tu-repositorio.git'
+                git branch: 'main', url: 'https://github.com/bhochoab/jenkins.git'
             }
         }
 
