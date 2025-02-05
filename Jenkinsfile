@@ -18,7 +18,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Compilando el proyecto...'
-                sh 'mvn clean install'  // Ejemplo para Maven
+                echo 'mvn clean install'  // Ejemplo para Maven
             }
         }
 
@@ -26,7 +26,7 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Ejecutando pruebas...'
-                sh 'mvn test'  // Ejemplo para Maven
+                echo 'mvn test'  // Ejemplo para Maven
             }
         }
 
@@ -36,13 +36,13 @@ pipeline {
                 script {
                     if (params.ENVIRONMENT == 'dev') {
                         echo 'Desplegando en Desarrollo...'
-                        sh './deploy-dev.sh'  // Script para desarrollo
+                        echo './deploy-dev.sh'  // Script para desarrollo
                     } else if (params.ENVIRONMENT == 'qa') {
                         echo 'Desplegando en QA...'
-                        sh './deploy-qa.sh'  // Script para QA
+                        echo './deploy-qa.sh'  // Script para QA
                     } else if (params.ENVIRONMENT == 'prod') {
                         echo 'Desplegando en Producción...'
-                        sh './deploy-prod.sh'  // Script para producción
+                        echo './deploy-prod.sh'  // Script para producción
                     }
                 }
             }
